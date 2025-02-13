@@ -3,25 +3,49 @@ const SAMPLE_MOVIES = [
     {
         title: "Inception",
         rating: 8.8,
-        imageUrl: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&q=80",
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
         year: "2010"
     },
     {
         title: "The Dark Knight",
         rating: 9.0,
-        imageUrl: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80",
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
         year: "2008"
     },
     {
         title: "Interstellar",
         rating: 8.6,
-        imageUrl: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80",
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
         year: "2014"
     },
     {
         title: "Pulp Fiction",
         rating: 8.9,
-        imageUrl: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&q=80",
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        year: "1994"
+    },
+    {
+        title: "The Shawshank Redemption",
+        rating: 9.3,
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+        year: "1994"
+    },
+    {
+        title: "The Godfather",
+        rating: 9.2,
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+        year: "1972"
+    },
+    {
+        title: "Fight Club",
+        rating: 8.8,
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+        year: "1999"
+    },
+    {
+        title: "Forrest Gump",
+        rating: 8.8,
+        imageUrl: "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
         year: "1994"
     }
 ];
@@ -56,7 +80,7 @@ function initializeMovies() {
         .join('');
     
     // Add trending movies (all)
-    trendingSection.innerHTML = SAMPLE_MOVIES
+    trendingSection.innerHTML = SAMPLE_MOVIES.slice(4)
         .map(movie => createMovieCard(movie))
         .join('');
 }
