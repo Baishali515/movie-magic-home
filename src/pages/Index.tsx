@@ -30,34 +30,29 @@ const SAMPLE_MOVIES = [
   },
 ];
 
-const CATEGORIES = ["All", "Action", "Drama", "Comedy", "Sci-Fi", "Horror", "Romance"];
+const CATEGORIES = ["All", "Action", "Drama", "Comedy", "Horror", "Romance"];
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted">
-      {/* Hero Section */}
-      <section className="container px-4 pt-20 pb-12 animate-fade-in">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          Discover Your Next Favorite Movie
+    <div className="min-h-screen bg-black">
+      {/* Header Section */}
+      <section className="container px-4 pt-16 pb-8 animate-fade-in">
+        <h1 className="text-5xl md:text-6xl font-bold text-center mb-12 text-white">
+          Movie Recommendation System
         </h1>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
-          Personalized movie recommendations based on your taste. Find the perfect movie for any mood.
-        </p>
         
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto relative group">
+        <div className="max-w-2xl mx-auto relative group mb-12">
           <input
             type="text"
             placeholder="Search for movies..."
             className="search-input"
           />
-          <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors duration-300" />
+          <Search className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-white/50 group-focus-within:text-white transition-colors duration-300" />
         </div>
-      </section>
 
-      {/* Categories */}
-      <section className="container px-4 py-8">
-        <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide">
+        {/* Categories */}
+        <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide justify-center">
           {CATEGORIES.map((category, index) => (
             <CategoryChip key={category} active={index === 0}>
               {category}
@@ -66,9 +61,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Movie Grid */}
+      {/* Recommended Movies */}
       <section className="container px-4 py-8">
-        <h2 className="text-2xl font-semibold mb-6">Trending Now</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Recommended for You</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {SAMPLE_MOVIES.slice(0, 4).map((movie) => (
+            <MovieCard key={movie.title} {...movie} />
+          ))}
+        </div>
+      </section>
+
+      {/* Trending Movies */}
+      <section className="container px-4 py-8">
+        <h2 className="text-2xl font-semibold mb-6 text-white">Trending Now</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {SAMPLE_MOVIES.map((movie) => (
             <MovieCard key={movie.title} {...movie} />

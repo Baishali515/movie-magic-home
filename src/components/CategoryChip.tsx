@@ -13,8 +13,8 @@ export const CategoryChip = ({ children, active = false, onClick }: CategoryChip
       onClick={onClick}
       className={`category-chip ${
         active
-          ? 'bg-primary text-primary-foreground'
-          : 'bg-white/10 text-foreground hover:bg-white/20'
+          ? 'bg-white text-black'
+          : 'bg-white/10 text-white hover:bg-white/20'
       }`}
     >
       {children}
